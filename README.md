@@ -13,7 +13,7 @@ This queue was designed with fairness in mind as there complaints of releases no
 
 ## Design
 
-This queue works by generating two tickets when `ticketGeneration` is live. 
+This queue works by generating two tickets when `ticketGeneration` is live.
 
 A single server ticket which is essentially a random number that was securely generated. It uses the base `difficulty` and is divided by the `score` of the given user and then the `difficulty` is stored in the session along with this ticket. Banned users, or users detected with the simple burner algorithm will have their either lowered or set to zero. Having a zero score is never revealed to the user as it would be help a willing attacker to game the system. The algorithm is public, so you probably shouldn't use the same one that is currently in the queue.
 
@@ -68,7 +68,7 @@ The theoretical sellout time of your item should be `(Time before sale is live) 
             "difficulty": -1, // Set this to the number of people in the queue through the Cloudflare KV API, this is the base chance for a user getting through the queue
             "pollInterval": 5000, // How often the browser should poll
             "saleComplete": true, // Whether the sale is complete
-            "ticketGeneration": true // Should the queue generate tickets, this determines the user's chance for the entirety of the queue 
+            "ticketGeneration": true // Should the queue generate tickets, this determines the user's chance for the entirety of the queue
         },
         "session": {
             "expiry": 900, // User session lifetime in seconds
