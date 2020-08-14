@@ -1,0 +1,11 @@
+name = "queue"
+type = "webpack"
+route = "" 
+webpack_config = "webpack.config.js"
+zone_id = "" 
+account_id = ""
+vars = { COSMOSDB_DB_ID = "queue", COSMOSDB_COLL_ID = "sessions", COSMOSDB_URL = "", DISCORD_CLIENT_ID = "", SHOPIFY_HOST = "", SENTRY_DSN = ""}
+kv-namespaces = [
+    { binding = "QueueKV", id = "" },
+    { binding = "CheckoutKV", id = "" }
+]

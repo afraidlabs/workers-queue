@@ -1,0 +1,29 @@
+name = "queue-dev"
+type = "webpack"
+route = "queue-dev.example.com/*" # The route wildcard you want to serve this on
+webpack_config = "webpack.config.js"
+zone_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Found on the Cloudflare Dashboard
+account_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Found on the Cloudflare Dashboard
+vars = { COSMOSDB_DB_ID = "queue", COSMOSDB_COLL_ID = "sessions", COSMOSDB_URL = "https://xxxxxxx.documents.azure.com", DISCORD_CLIENT_ID = "xxxxxxxxxxxxxxxxxx", SHOPIFY_HOST = "example-store.myshopify.com", SENTRY_DSN = "https://xxxxxx@xxxx.ingest.sentry.io/xxxx"}
+kv-namespaces = [
+    { binding = "QueueKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },
+    { binding = "CheckoutKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
+]
+
+[env.staging]
+name = "queue-stg"
+route = "queue-stg.example.com/*"
+vars = { COSMOSDB_DB_ID = "queue", COSMOSDB_COLL_ID = "sessions", COSMOSDB_URL = "https://xxxxxxx.documents.azure.com", DISCORD_CLIENT_ID = "xxxxxxxxxxxxxxxxxx", SHOPIFY_HOST = "example-store.myshopify.com", SENTRY_DSN = "https://xxxxxx@xxxx.ingest.sentry.io/xxxx" }
+kv-namespaces = [
+    { binding = "QueueKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },
+    { binding = "CheckoutKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
+]
+
+[env.production]
+name = "queue-prod"
+route = "queue.example.com/*"
+vars = { COSMOSDB_DB_ID = "queue", COSMOSDB_COLL_ID = "sessions", COSMOSDB_URL = "https://xxxxxxx.documents.azure.com", DISCORD_CLIENT_ID = "xxxxxxxxxxxxxxxxxx", SHOPIFY_HOST = "example-store.myshopify.com", SENTRY_DSN = "https://xxxxxx@xxxx.ingest.sentry.io/xxxx" }
+kv-namespaces = [
+    { binding = "QueueKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },
+    { binding = "CheckoutKV", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
+]
