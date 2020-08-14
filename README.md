@@ -1,6 +1,6 @@
 # Queue
 
-This queue was designed with fairness in mind as there complaints of releases not being fair. There was a requirement for very flexible scalabilty, hence we chose [Cloudflare Workers®](https://workers.cloudflare.com/) to handle the intense load. This repository only contains the server-side API implementation but it is fairly easy to write your own frontend in something like React, Vue or Angular etc... We also had to prevent bot spam on the queue so we chose reCAPTCHA v3 and enforced low ratelimits on Cloudflare per IP to prevent spammers.
+This queue was designed with fairness in mind as there were complaints of releases not being fair. There was a requirement for very flexible scalabilty, hence we chose [Cloudflare Workers®](https://workers.cloudflare.com/) to handle the intense load. This repository only contains the server-side API implementation but it is fairly easy to write your own frontend in something like React, Vue or Angular etc... We also had to prevent bot spam on the queue so we chose reCAPTCHA v3 and enforced low ratelimits on Cloudflare per IP to prevent spammers.
 
 ## Prerequisites
 
