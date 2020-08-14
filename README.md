@@ -78,6 +78,7 @@ The theoretical sellout time of your item should be `(Time before sale is live) 
     }
     ```
 
+
 - Setup the `messages` key in the `QueueKV` namespace with any messages you want, it should just be an array of strings
 
     ```javascript
